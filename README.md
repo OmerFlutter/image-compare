@@ -1,4 +1,4 @@
-#Flutter Image Compare - SSIM
+# Flutter Image Compare - SSIM
 This is a Flutter project that provides an implementation of the Structural Similarity Index (SSIM) algorithm for comparing images. The SSIM algorithm is a widely used method for measuring the similarity between two images. It takes into account factors such as luminance, contrast, and structure to provide a more accurate comparison than traditional pixel-based methods.
 
 The SSIM index calculation involves comparing the mean luminance, variance, and covariance of the two images.
@@ -7,7 +7,7 @@ Luminance refers to the brightness or intensity of the pixels in the image. Cont
 
 The formula for calculating the SSIM score is:
 
-<img src="SSIM.png" alt="SSIM formula"/>
+<img src="SSIM.jpg" alt="SSIM formula"/>
 
 Here, x and y are the two images being compared, mean(x) and mean(y) are the mean luminance values of the two images, cov(x, y) is the covariance of the two images, and var(x) and var(y) are the variances of the two images.
 
