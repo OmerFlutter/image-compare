@@ -30,11 +30,11 @@ void init() {
 
 void _registerServices() {
   getIt
-    ..registerLazySingleton<PermissionService>(() => PermissionServiceImpl())
+    ..registerLazySingleton<PermissionService>(PermissionServiceImpl.new)
     ..registerLazySingleton<ImageCompareService>(
-      () => ImageCompareServiceImpl(),
+      ImageCompareServiceImpl.new,
     )
-    ..registerLazySingleton(() => ImagePicker());
+    ..registerLazySingleton(ImagePicker.new);
 }
 
 void _registerRepositories() {
@@ -61,7 +61,7 @@ void _registerUseCases() {
 
 void _registerCubits() {
   getIt
-    ..registerLazySingleton(() => ImageMediator())
+    ..registerLazySingleton(ImageMediator.new)
     ..registerFactory(
       () => ImageCompareCubit(
         compareImagesUseCase: getIt(),
