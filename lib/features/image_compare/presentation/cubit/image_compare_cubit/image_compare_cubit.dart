@@ -42,7 +42,7 @@ class ImageCompareCubit extends Cubit<ImageCompareState> {
 
   /// Compares the [_firstImageData] and [_secondImageData] using the
   /// [compareImagesUseCase] and updates the state accordingly.
-  Future<void> compareImages() async {
+  Future<void> compareImages({String firster = '', String seconder = ''}) async {
     emit(const ImageCompareState.executing());
 
     var firstImage = await ImageDecoder.decodeFromAsset(Assets.firstImage);
@@ -60,6 +60,18 @@ class ImageCompareCubit extends Cubit<ImageCompareState> {
     if (localSecondImageData != null) {
       secondImage = await ImageDecoder.decodeFromFile(
         File(localSecondImageData.filePath),
+      );
+    }
+
+    if(firster != ''){
+      firstImage = await ImageDecoder.decodeFromFile(
+        File(firster),
+      );
+    }
+
+    if(seconder != ''){
+      secondImage = await ImageDecoder.decodeFromFile(
+        File(seconder),
       );
     }
 

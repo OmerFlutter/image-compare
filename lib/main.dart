@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_compare/features/image_compare/presentation/cubit/image_compare_cubit/image_compare_cubit.dart';
 import 'package:image_compare/features/image_compare/presentation/pages/image_compare_page.dart';
+import 'package:image_compare/home/home.dart';
 import 'package:image_compare/injection.dart' as injection;
 
 void main() {
@@ -23,7 +24,8 @@ class Main extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ImageComparePage(),
+        home: HomeScreen(),
+        // home: const ImageComparePage(),
       ),
     );
   }
